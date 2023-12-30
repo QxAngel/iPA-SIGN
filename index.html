@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+	<title>Signer IPA</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			padding: 20px;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		form {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+		input[type="file"] {
+			margin-bottom: 20px;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h1>Signer IPA</h1>
+	<form method="POST" enctype="multipart/form-data" action="signer.php">
+		<label>Certificate (.p12):</label>
+		<input type="file" name="certificate" required>
+		<label>Certificate Password:</label>
+		<input type="password" name="password" required>
+		<label>Mobile Provisioning File:</label>
+		<input type="file" name="mobileprovision" required>
+		<label>IPA File:</label>
+		<input type="file" name="ipaFile" required>
+		<input type="submit" value="Sign the IPA">
+	</form>
+</body>
+</html>
